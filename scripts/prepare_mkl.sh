@@ -33,7 +33,7 @@ DST=`dirname $0`/../external
 mkdir -p $DST
 DST=`cd $DST;pwd`
 
-curl -L -o "${DST}/${MKLPACKAGE}" "$MKLURL"
+wget --no-check-certificate -O "${DST}/${MKLPACKAGE}" "$MKLURL"
 if [ \! $? ]; then
   echo "Download from $MKLURL to $DST failed"
   exit 1
